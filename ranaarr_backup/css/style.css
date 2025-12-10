@@ -18,15 +18,15 @@ body {
 .logo-font {
     font-family: 'Dancing Script', cursive; /* Applied stylish script font to the Navbar */
     
-    /* CHANGE 1: Increased spacing slightly to make the name wider */
-    letter-spacing: 1.5px; 
+    /* Kept wide spacing */
+    letter-spacing: 5px; 
     
     text-transform: capitalize;
     
-    /* CHANGE 2: Increased font size significantly (was 1.5em) to make it more visible */
-    font-size: 2.5em; 
+    /* Reduced font size to reduce navbar height (Was 5.5em) */
+    font-size: 3.5em; 
     
-    font-weight: 700;
+    font-weight: 900; 
 }
 
 /* NEW: Stylish Font for Hero Headline (Cinzel) */
@@ -34,7 +34,7 @@ body {
     font-family: 'Cinzel', serif; 
     letter-spacing: 12px; /* Increased dramatically for the magazine/luxury look */
     font-weight: 900; /* Made it very bold */
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Added subtle shadow for depth against the background */
+    text-shadow: 0 0 10px rgba(225, 210, 4, 0.5); /* Added subtle shadow for depth against the background */
 }
 
 .text-gold {
@@ -45,11 +45,40 @@ body {
 .navbar-brand {
     color: var(--white) !important; 
 }
+
+/* ------------------------------------------------------- */
+/* BACKGROUND IMAGE & HEIGHT ADJUSTMENT FOR NAVBAR */
+/* ------------------------------------------------------- */
+#mainNav {
+    /* Link to your pattern image (Ensure file is named nav-bg.jpg) */
+    background-image: url('../images/nav-bg.jpg'); 
+    
+    /* Ensure the pattern covers the bar nicely */
+    background-size: cover; 
+    background-position: center;
+    
+    /* Optional: Darkens the image slightly so white text remains readable */
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+    
+    /* Adds a luxury gold line at the bottom */
+    border-bottom: 1px solid var(--gold);
+
+    /* Manually set smaller padding to decrease bar height */
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+/* ------------------------------------------------------- */
+
 .nav-link {
+    /* CHANGE: Set the default text color to gold for better visibility */
+    color: var(--white) !important;
+    
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 750;
     margin-left: 15px;
-    transition: color 0.3s;
+    transition: color 1s;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
 }
 .nav-link:hover, .nav-link.active {
     color: var(--gold) !important; 
@@ -98,7 +127,7 @@ body {
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
-    height: 250px; /* Match the image height */
+    height: 450px; /* Match the image height */
     overflow: hidden;
 }
 
@@ -158,11 +187,11 @@ body {
 
 /* 6. Logo Styling (SIZING AND CONTRAST FIXES) */
 #logo-img {
-    /* CHANGE 3: Increased Logo Height from 50px to 80px */
-    height: 75px;
+    /* Decreased Logo Height to make navbar smaller */
+    height: 70px;
     
-    width: 150px; 
-    filter: drop-shadow(0 0 5px rgba(217, 240, 90, 0.7));
+    width: auto; 
+    filter: drop-shadow(0 0 2px  rgba(45, 244, 5, 0.7));
 }
 
 /* Responsive adjustments */
@@ -177,7 +206,7 @@ body {
     
     /* ADDED: Make logo smaller again on mobile so it fits */
     #logo-img {
-        height: 60px;
+        height: 50px;
     }
     .logo-font {
         font-size: 1.8em;
