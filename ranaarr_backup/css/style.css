@@ -17,9 +17,15 @@ body {
 /* NAVBAR LOGO FONT (Script style) */
 .logo-font {
     font-family: 'Dancing Script', cursive; /* Applied stylish script font to the Navbar */
-    letter-spacing: 0; /* No heavy spacing for script */
+    
+    /* CHANGE 1: Increased spacing slightly to make the name wider */
+    letter-spacing: 1.5px; 
+    
     text-transform: capitalize;
-    font-size: 1.5em; /* Make script font slightly larger to be readable */
+    
+    /* CHANGE 2: Increased font size significantly (was 1.5em) to make it more visible */
+    font-size: 2.5em; 
+    
     font-weight: 700;
 }
 
@@ -57,7 +63,7 @@ body {
     background-image: url('../images/hero-bg.jpg'); 
     background-size: cover;
     background-position: center;
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
 /* Dark Overlay to enforce B&W high contrast */
@@ -152,15 +158,29 @@ body {
 
 /* 6. Logo Styling (SIZING AND CONTRAST FIXES) */
 #logo-img {
-    height: 50px; 
-    width: auto;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+    /* CHANGE 3: Increased Logo Height from 50px to 80px */
+    height: 75px;
+    
+    width: 150px; 
+    filter: drop-shadow(0 0 5px rgba(217, 240, 90, 0.7));
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero-section h1 {
         font-size: 3rem;
+    }
+    /* ADDED: Reduce padding on small screens to fit content better */
+    .hero-section {
+        padding: 80px 0; 
+    }
+    
+    /* ADDED: Make logo smaller again on mobile so it fits */
+    #logo-img {
+        height: 60px;
+    }
+    .logo-font {
+        font-size: 1.8em;
     }
 }
 
@@ -186,4 +206,36 @@ body {
 /* Apply celebration animation on click */
 .hero-section .btn:active {
     animation: celebration-burst 0.4s ease-out; /* Use the new burst animation */
+}
+
+/* ------------------------------------ */
+/* ** FINAL FIXES & CUSTOM ALIGNMENT ** */
+/* ------------------------------------ */
+
+/* FIX: Ensure About Us paragraphs are justified for cleaner visual lines */
+#about p {
+    text-align: justify !important; /* Force justification */
+    text-justify: inter-word; /* Improves word spacing */
+}
+@media (min-width: 768px) {
+    #about p {
+        text-align: justify !important;
+    }
+}
+
+/* ------------------------------------------- */
+/* ** NEW: FULL SCREEN SECTION FIX ** */
+/* ------------------------------------------- */
+
+/* This targets About, Services, Portfolio, and Contact */
+section {
+    /* 1. Forces every section to be at least the height of the screen */
+    min-height: 100vh; 
+    
+    /* 2. Centers the content vertically within that full screen */
+    display: flex;
+    align-items: center;
+    
+    /* 3. Ensures the sticky navbar doesn't cover the top of the section when clicking links */
+    scroll-margin-top: 70px; 
 }
